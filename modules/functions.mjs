@@ -32,8 +32,14 @@ export function roomsData() {
 }
 
 export async function addRoomData(data) {
-  let readFileData = await fs.readFile(path.resolve(dirName, filePath),"utf-8");
+  let readFileData = await fs.readFile(
+    path.resolve(dirName, filePath),
+    "utf-8"
+  );
   readFileData = JSON.parse(readFileData);
   readFileData.push(data);
-  await fs.writeFile(path.resolve(dirName, filePath), JSON.stringify(readFileData));
+  await fs.writeFile(
+    path.resolve(dirName, filePath),
+    JSON.stringify(readFileData)
+  );
 }
